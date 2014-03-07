@@ -1,5 +1,5 @@
 {
-  "author": "Your Name",
+  "author": "Poplinr",
   "name": "package-name",
   "description": "Package description",
   "version": "1.7.0",
@@ -23,7 +23,9 @@
     "stylus-brunch": ">= 1.0 < 1.7",
 
     "uglify-js-brunch": ">= 1.0 < 1.7",
-    "clean-css-brunch": ">= 1.0 < 1.7"
+    "clean-css-brunch": ">= 1.0 < 1.7",
+
+    "handlebars-brunch": ">= 1.0 < 1.8"
   },
   "devDependencies": {
   }
