@@ -72,4 +72,7 @@
 		console.log(fullProgrammerDesc(programmerOne));
 		console.log(programmerWithNameAndAge(programmerOne));
 	}());
+	(function() {
+		
+	}());
 }());
