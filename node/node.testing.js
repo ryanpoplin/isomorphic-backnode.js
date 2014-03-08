@@ -1,6 +1,8 @@
+'use strict';
 (function() {
 	var callback, Counter, counter, EventEmitter;
 	EventEmitter = require('events').EventEmitter;
+	console.log(EventEmitter);
 	Counter = function(init) {
 		this.increment = function() {
 			init += 1;
@@ -18,6 +20,6 @@
 	counter.increment();
 	counter.increment();
 	counter.removeListener('incremented', callback);
-	// Will not fire the event for incrementation...
+	// will not fire the event for incrementation...
 	counter.increment();
 }());

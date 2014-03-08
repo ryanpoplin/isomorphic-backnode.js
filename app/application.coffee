@@ -1,6 +1,6 @@
-NumberModel = require('models/number-model')
-NumberView = require('views/number-view')
-NumberController = require('controllers/number-controller')
+NumberModel = require 'models/number-model'
+NumberView = require 'views/number-view'
+NumberController = require 'controllers/number-controller'
 
 class Application extends Backbone.Marionette.Application
   initialize: =>
