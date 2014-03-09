@@ -70,6 +70,57 @@ class Application extends Backbone.Marionette.Application
 
    	# More Backbone.js Model...
 
+   	# extend...
+   	# Backbone.Model.extend(props, [classProps])
+
+   	# Config...
+
+   	NodeProgram = Backbone.Model.extend
+   		initialize: ->
+   			console.log 'NodeProgram Init...'
+   			return
+   		author: ->
+   			console.log 'Poplinr'
+   			return
+   		allowedToEdit: (access) ->
+   			true
+
+   	PrivateNodeProgram = NodeProgram.extend
+   		allowedToEdit: (access) ->
+   			access.owns @
+
+   	AnotherNodeProgram = Backbone.Model.extend
+   		set: (attributes, options) ->
+   			Backbone.Model::set.apply @, arguments
+   			# ...
+
+   	# constructor / init...
+   	# new Model([attributes], [options])
+
+   	Poplinr = Backbone.Model.extend
+   		initialize: ->
+   			console.log 'Just a model...'
+   		defaults:
+   			name: 'Hacker'
+   	
+   	Archive = Backbone.Model.extend
+   		constructor: ->
+   			@info = new Poplinr
+   			Backbone.Model.apply @, arguments
+   		parse: (data, options) ->
+   			@info.reset data.info
+   			data.archive
+
+   	# get...
+   	# model.get(attribute)...
+
+   	# set...
+   	# model.set(attributes, [options])
+
+   	(->
+   		console.log 'IFFE func test...'
+   	)()
+
    	
 
     view = new IndexView
