@@ -73,6 +73,32 @@
 		console.log(programmerWithNameAndAge(programmerOne));
 	}());
 	(function() {
+		// var that = this testing...
+		var randomObj;
+		randomObj = {};
+		randomObj.name = 'Poplinr';
+		randomObj.age = 24;
+		randomObj.alias = 'Vredesbyrdann';
+		randomObj.getName = function() {
+			var getAlias, anotherRandomObj, that;
+			console.log(this.name);
+			that = this;
+			anotherRandomObj = function() {
+				console.log(that.age);
+				console.log(that);
+				getAlias = function() {
+					console.log(that.alias);
+					// return that;
+				};
+				getAlias();
+				// return that;
+			};	
+			anotherRandomObj();
+			// return this;
+		};
+		randomObj.getName();
+	}());
+	(function() {
 		
 	}());
 }());
