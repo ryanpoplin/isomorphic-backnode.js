@@ -5,6 +5,9 @@ NumberController = require 'controllers/number-controller'
 ###
 
 # Testing...
+CoffeeModule = require 'testing/testing'
+
+# Testing...
 NoteModel = require 'models/note-model'
 
 # Testing...
@@ -19,7 +22,7 @@ class Application extends Backbone.Marionette.Application
     # view = new NumberView model: model
 
     ###
-		Below is for pure testing in CoffeeScript...
+		Below is for pure testing in Backbone and CoffeeScript...
     ###
 
     # Backbone.js Model...
@@ -121,7 +124,36 @@ class Application extends Backbone.Marionette.Application
    		console.log 'IFFE func test...'
    	)()
 
-   	
+   	# escape...
+   	# model.escape(attribues)
+
+   	###
+   	hacker = new Backbone.Model
+   		name: '<script>console.log('xss');</script>'
+
+   	console.log hacker.escape 'name'
+	###
+
+   	# has...
+
+   	console.log noteFour.has 'title'
+
+   	# model.unset(attributes, [options])
+
+   	# model.clear([options])
+
+   	# model.id
+
+   	# model.idAttribute
+
+   	# cid...
+   	# model.cid
+
+
+
+   	###
+   		Core Code Below...
+   	### 
 
     view = new IndexView
    	# new NumberController model: model, view: view
