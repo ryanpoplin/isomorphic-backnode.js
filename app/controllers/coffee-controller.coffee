@@ -1,7 +1,6 @@
 module.exports = class CoffeeController extends Marionette.Controller 
 	initialize: (options) ->
+		console.log 'CoffeeController Init...'
 		@model = options.model
-		@view = options.view
-		# @listenTo @view, 'coffee:event', @coffeeEvent
-		console.log 'Fuck!...'
+		@view = options.views
 		return

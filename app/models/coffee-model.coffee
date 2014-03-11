@@ -1,6 +1,6 @@
 module.exports = class CoffeeModel extends Backbone.Model 
 	defaults: 
-		name: 'Core-Hacker'
+		name: 'Poplinr'
 	initialize: ->
 		console.log 'CoffeeModel Init...'
 		return
