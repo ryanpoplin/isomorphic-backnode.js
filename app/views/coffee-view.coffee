@@ -6,4 +6,4 @@ module.exports = class CoffeeView extends Backbone.Marionette.ItemView
 			blogger:
 				name: @model.get 'name'
 		jQuery ->
-			$('#blogger-name').html(blog.blogger.name)
+			$('#blogger-name').html(blog.blogger.name + 'aaa')
