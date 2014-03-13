@@ -1,6 +1,9 @@
 (function() {
+  
   (function() {
+    
     var log, testObject;
+    
     log = function() {
       var e;
       try {
@@ -15,6 +18,7 @@
         }
       }
     };
+    
     (function() {
       var assert, paused, queue, results, runTest;
       runTest = function() {
@@ -54,6 +58,9 @@
         }
         return li;
       };
+    
     })();
+  
   })();
+
 }).call(this);
