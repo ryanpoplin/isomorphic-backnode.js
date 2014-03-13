@@ -11,22 +11,26 @@ window.onload = function() {
     assert(true, "Passing Test...");
     resume();
   });*/
-  test('Backbone.js Application Dependencies Testing...', function() {
+  test('Application Dependencies Testing...', function() {
     var object;
-    object = {};
     pause();
-    assert($ !== undefined, 'jQuery.js is not undefined...');
-    assert($ !== null, 'jQuery.js is not null...');
-    assert(_ !== undefined, 'Underscore.js is not undefined...');
-    assert(_ !== null, 'Underscore.js is not null...');
-    assert(Backbone !== undefined, 'Backbone.js is not undefined...');
-    assert(Backbone !== null, 'Backbone.js is not null...');
+    (function() {
+      var args, dep, depIndex, i, j;
+      args = Array.prototype.slice.call(arguments);
+      for (i = 0, j = args.length; i < j; i += 1) {
+        dep = args[i];
+        depIndex = 1;
+        depIndex += i;
+        assert(dep !== null || undefined, 'Dependency ' + depIndex + ' is not null or undefined...');
+      }
+    }($, _, Backbone));
+    object = {};
     _.extend(object, Backbone.Events);
     object.on('show-message', function(msg) {
       $('#main #listing').text(msg);
     });
-    object.trigger('show-message', 'Backbone.js App Time...');
-    assert($('#main #listing').text() === 'Backbone.js App Time...', 'DOM result was successful...');
+    object.trigger('show-message', 'A Backbone App...');
+    assert($('#main #listing').text() === 'A Backbone App...', 'DOM result was successful...');
     resume();
   });
 };

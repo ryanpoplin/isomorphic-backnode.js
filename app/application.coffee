@@ -8,7 +8,7 @@ class Application extends Backbone.Marionette.Application
 
     model = new CoffeeModel
     view = new CoffeeView model: model
-    # new CoffeeController model: model, view: view
+    new CoffeeController model: model, view: view
 
     @addRegions mainRegion: '#main'
     @mainRegion.show view
